@@ -38,12 +38,25 @@ class _BookingsState extends State<Bookings> {
   @override
   Widget build(BuildContext context) {
     getAllList(DataBases.bookingsDataBase);
-
     return Scaffold(
       body: Center(
         child: Column(
           children: [
-            const Gap(70),
+            const Gap(40),
+            const Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                padding: EdgeInsets.only(left: 30),
+                child: Text(
+                  'LUXE-RIDE',
+                  style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue),
+                ),
+              ),
+            ),
+            const Gap(20),
             const Text(
               'BOOKINGS',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
@@ -54,7 +67,6 @@ class _BookingsState extends State<Bookings> {
                   valueListenable: bookingsListNotifier,
                   builder: (context, List<BookingsModel> bookingsList, child) {
                     return SizedBox(
-                        height: 700,
                         child: bookingsList.isEmpty
                             ? Column(
                                 children: [
@@ -69,7 +81,6 @@ class _BookingsState extends State<Bookings> {
                                 itemCount: bookingsList.length,
                                 itemBuilder: (context, index) {
                                   final bookingsdata = bookingsList[index];
-
                                   return Column(
                                     children: [
                                       Slidable(
@@ -83,7 +94,33 @@ class _BookingsState extends State<Bookings> {
                                                 backgroundColor:
                                                     Colors.redAccent,
                                                 onPressed: (context) {
-                                                  delete(DataBases.bookingsDataBase,index);
+                                                  showDialog(
+                                                      context: context,
+                                                      useSafeArea: true,
+                                                      builder:
+                                                          (context) =>
+                                                              AlertDialog(
+                                                                scrollable:true,
+                                                                content: const Text('Are you sure?'),
+                                                                actions: [
+                                                                  TextButton(
+                                                                      onPressed:
+                                                                          () {
+                                                                        delete(DataBases.bookingsDataBase,index);
+                                                                        Navigator.pop(context);
+                                                                      },
+                                                                      child:
+                                                                          const Text('DELETE',style: TextStyle(
+                                                                            color:Colors.red),
+                                                                      )),
+                                                                  TextButton(onPressed:
+                                                                          () {
+                                                                        Navigator.pop(context);
+                                                                      },
+                                                                      child: const Text('Cancel',
+                                                                          style:TextStyle(color: Colors.black)))
+                                                                ],
+                                                              ));
                                                 },
                                                 icon: CupertinoIcons.delete,
                                               ),
@@ -96,22 +133,15 @@ class _BookingsState extends State<Bookings> {
                                                     builder: (context) =>
                                                         BookingsDetails(
                                                           companyName:
-                                                              bookingsdata
-                                                                  .companyName,
+                                                              bookingsdata.companyName,
                                                           modelName:
-                                                              bookingsdata
-                                                                  .modelName,
-                                                          userName: bookingsdata
-                                                              .userName,
+                                                              bookingsdata.modelName,
+                                                          userName: bookingsdata.userName,
                                                           age: bookingsdata.age,
-                                                          address: bookingsdata
-                                                              .address,
-                                                          license: bookingsdata
-                                                              .license,
-                                                          package: bookingsdata
-                                                              .package,
-                                                          image: bookingsdata
-                                                              .image,
+                                                          address: bookingsdata.address,
+                                                          license: bookingsdata.license,
+                                                          package: bookingsdata.package,
+                                                          image: bookingsdata.image,
                                                         )));
                                           },
                                           child: SizedBox(
@@ -135,12 +165,9 @@ class _BookingsState extends State<Bookings> {
                                                       left: 80,
                                                       child: Image(
                                                           fit: BoxFit.contain,
-                                                          image: bookingsdata
-                                                                      .image !=
-                                                                  null
+                                                          image: bookingsdata.image !=null
                                                               ? FileImage(File(
-                                                                  bookingsdata
-                                                                      .image))
+                                                                  bookingsdata.image))
                                                               : const AssetImage(
                                                                       'assets/images/addimage.png')
                                                                   as ImageProvider)),
@@ -152,21 +179,11 @@ class _BookingsState extends State<Bookings> {
                                                           CrossAxisAlignment
                                                               .start,
                                                       children: [
-                                                        Text(
-                                                            bookingsdata
-                                                                .userName,
+                                                        Text(bookingsdata.userName,
                                                             style: const TextStyle(
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                fontSize: 12)),
-                                                        Text(
-                                                            bookingsdata
-                                                                .package,
-                                                            style:
-                                                                const TextStyle(
-                                                                    fontSize:
-                                                                        8))
+                                                                fontWeight:FontWeight.bold,fontSize: 12)),
+                                                        Text(bookingsdata.package,
+                                                            style:const TextStyle(fontSize:8))
                                                       ],
                                                     ),
                                                   )

@@ -94,9 +94,9 @@ class _DetailScreenState extends State<DetailScreen> {
                     const Gap(20),
                     Text('Torque : ${widget.torque}'),
                     const Gap(20),
-                    Text('Price for a Day : ${widget.dailyPrice}'),
+                    Text('Price for a Day : ${widget.dailyPrice}\$'),
                     const Gap(20),
-                    Text('Price for a Month : ${widget.monthlyPrice}')
+                    Text('Price for a Month : ${widget.monthlyPrice}\$')
                   ],
                 ),
               ],

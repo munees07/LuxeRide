@@ -3,8 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:luxeride/db/model/bikes_model.dart';
 import 'package:luxeride/db/model/bookings_model.dart';
 import 'package:luxeride/db/model/cars_model.dart';
-
-// import 'package:luxeride/screens/signup.dart';
 import 'package:luxeride/screens/splash.dart';
 
 Future<void> main() async {

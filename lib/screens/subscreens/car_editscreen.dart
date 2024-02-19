@@ -151,27 +151,34 @@ class _CarEditScreenState extends State<CarEditScreen> {
     final newmonthprice = monthlypricecontroller.text.trim();
     final newimage = selectedImage!.path;
 
-    if (newcompany.isEmpty ||
-        newmodel.isEmpty ||
-        newpower.isEmpty ||
-        newtorque.isEmpty ||
-        newdailyprice.isEmpty ||
-        newmonthprice.isEmpty ||
-        newimage.isEmpty) {
-      return;
-    } else {
-      final update = CarsModel(
-          companyName: newcompany,
-          modelName: newmodel,
-          horsePower: newpower,
-          torque: int.parse(newtorque),
-          priceDay: int.parse(newdailyprice),
-          priceMonth: int.parse(newmonthprice),
-          image: newimage);
+    final update = CarsModel(
+        companyName: newcompany,
+        modelName: newmodel,
+        horsePower: newpower,
+        torque: int.parse(newtorque),
+        priceDay: int.parse(newdailyprice),
+        priceMonth: int.parse(newmonthprice),
+        image: newimage);
 
-      edit(DataBases.carDataBase, widget.index, update);
-      Navigator.pop(context);
-    }
+    edit(DataBases.carDataBase, widget.index, update);
+    showDialog(
+        context: context,
+        useSafeArea: true,
+        builder: (context) => AlertDialog(
+              scrollable: true,
+              content: const Text('Changes Applied!'),
+              actions: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        textStyle: const TextStyle(color: Colors.white)),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                    },
+                    child: const Text('OK'))
+              ],
+            ));
   }
 
   Future pickImageFromGallery() async {

@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
@@ -72,20 +71,19 @@ class _BikeEditScreenState extends State<BikeEditScreen> {
                   width: double.infinity,
                   height: 150,
                   child: Card(
-                    shadowColor: Colors.black54,
-                    elevation: 8,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Image(
-                        fit: BoxFit.contain,
-                        image: selectedImage != null
-                            ? FileImage(
-                                selectedImage!,
-                              )
-                            : const AssetImage(
-                                    'assets/images/avatarPerson.jpeg')
-                                as ImageProvider),
-                  ),
+                      shadowColor: Colors.black54,
+                      elevation: 8,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Image(
+                          fit: BoxFit.contain,
+                          image: selectedImage != null
+                              ? FileImage(
+                                  selectedImage!,
+                                )
+                              : const AssetImage(
+                                      'assets/images/avatarPerson.jpeg')
+                                  as ImageProvider)),
                 ),
                 const Gap(10),
                 FilledButtonWidget(
@@ -152,27 +150,34 @@ class _BikeEditScreenState extends State<BikeEditScreen> {
     final newmonthprice = monthlypricecontroller.text.trim();
     final newimage = selectedImage!.path;
 
-    if (newcompany.isEmpty ||
-        newmodel.isEmpty ||
-        newpower.isEmpty ||
-        newtorque.isEmpty ||
-        newdailyprice.isEmpty ||
-        newmonthprice.isEmpty ||
-        newimage.isEmpty) {
-      return;
-    } else {
-      final update = BikesModel(
-          companyName: newcompany,
-          modelName: newmodel,
-          horsePower: newpower,
-          torque: int.parse(newtorque),
-          priceDay: int.parse(newdailyprice),
-          priceMonth: int.parse(newmonthprice),
-          image: newimage);
+    final update = BikesModel(
+        companyName: newcompany,
+        modelName: newmodel,
+        horsePower: newpower,
+        torque: int.parse(newtorque),
+        priceDay: int.parse(newdailyprice),
+        priceMonth: int.parse(newmonthprice),
+        image: newimage);
 
-      edit(DataBases.bikeDataBase, widget.index, update);
-      Navigator.pop(context);
-    }
+    edit(DataBases.bikeDataBase, widget.index, update);
+    showDialog(
+        context: context,
+        useSafeArea: true,
+        builder: (context) => AlertDialog(
+              scrollable: true,
+              content: const Text('Changes Applied!'),
+              actions: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.black,
+                        textStyle: const TextStyle(color: Colors.white)),
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                    },
+                    child: const Text('OK'))
+              ],
+            ));
   }
 
   Future pickImageFromGallery(source) async {

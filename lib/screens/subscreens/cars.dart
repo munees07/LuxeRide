@@ -71,7 +71,6 @@ class _CarPageState extends State<CarPage> {
                 valueListenable: carListNotifier,
                 builder: (context, List<CarsModel> carList, child) {
                   return SizedBox(
-                      height: 700,
                       child: search.isNotEmpty
                           ? searchedList.isEmpty
                               ? Center(
@@ -95,6 +94,7 @@ class _CarPageState extends State<CarPage> {
       ),
     );
   }
+
   List<int> carSum = [];
 
   Widget carListwidget(List<CarsModel> carlist) {
@@ -147,7 +147,32 @@ class _CarPageState extends State<CarPage> {
                         borderRadius: BorderRadius.circular(15),
                         backgroundColor: Colors.redAccent,
                         onPressed: (context) {
-                          delete(DataBases.carDataBase, index);
+                          showDialog(
+                              context: context,
+                              useSafeArea: true,
+                              builder: (context) => AlertDialog(
+                                    scrollable: true,
+                                    content: const Text('Are you sure?'),
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            delete(
+                                                DataBases.carDataBase, index);
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text(
+                                            'DELETE',
+                                            style: TextStyle(color: Colors.red),
+                                          )),
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text('Cancel',
+                                              style: TextStyle(
+                                                  color: Colors.black)))
+                                    ],
+                                  ));
                         },
                         icon: CupertinoIcons.delete,
                       ),
@@ -215,5 +240,5 @@ class _CarPageState extends State<CarPage> {
               );
             },
           );
-  } 
+  }
 }

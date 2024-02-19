@@ -71,7 +71,6 @@ class _BikePageState extends State<BikePage> {
                 valueListenable: bikeListNotifier,
                 builder: (context, List<BikesModel> bikeList, child) {
                   return SizedBox(
-                    height: 700,
                     child: search.isNotEmpty
                         ? searchedList.isEmpty
                             ? Center(
@@ -145,7 +144,32 @@ class _BikePageState extends State<BikePage> {
                         borderRadius: BorderRadius.circular(15),
                         backgroundColor: Colors.redAccent,
                         onPressed: (context) {
-                          delete(DataBases.bikeDataBase, index);
+                          showDialog(
+                              context: context,
+                              useSafeArea: true,
+                              builder: (context) => AlertDialog(
+                                    scrollable: true,
+                                    content: const Text('Are you sure?'),
+                                    actions: [
+                                      TextButton(
+                                          onPressed: () {
+                                            delete(
+                                                DataBases.bikeDataBase, index);
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text(
+                                            'DELETE',
+                                            style: TextStyle(color: Colors.red),
+                                          )),
+                                      TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: const Text('Cancel',
+                                              style: TextStyle(
+                                                  color: Colors.black)))
+                                    ],
+                                  ));
                         },
                         icon: CupertinoIcons.delete,
                       ),

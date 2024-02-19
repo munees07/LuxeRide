@@ -90,7 +90,7 @@ class _AddScreenState extends State<AddScreen> {
                       }
                     }),
                 AddFormField(
-                    maxLength: 15,
+                    maxLength: 20,
                     inputformat: r'[a-z,A-Z," ",0-9]',
                     keyboardType: TextInputType.text,
                     hintText: 'model name',
@@ -181,14 +181,7 @@ class _AddScreenState extends State<AddScreen> {
       final torque = torquecontroller.text.trim();
       final dailyprice = dailypricecontroller.text.trim();
       final monthlyprice = monthlypricecontroller.text.trim();
-      if (company.isEmpty ||
-          model.isEmpty ||
-          power.isEmpty ||
-          torque.isEmpty ||
-          dailyprice.isEmpty ||
-          monthlyprice.isEmpty) {
-        return;
-      }
+      
       print('$company $model $power $torque $dailyprice $monthlyprice');
 
       final car = CarsModel(
@@ -207,14 +200,7 @@ class _AddScreenState extends State<AddScreen> {
       final torque = torquecontroller.text.trim();
       final dailyprice = dailypricecontroller.text.trim();
       final monthlyprice = monthlypricecontroller.text.trim();
-      if (company.isEmpty ||
-          model.isEmpty ||
-          power.isEmpty ||
-          torque.isEmpty ||
-          dailyprice.isEmpty ||
-          monthlyprice.isEmpty) {
-        return;
-      }
+      
       print('$company $model $power $torque $dailyprice $monthlyprice');
 
       final bike = BikesModel(

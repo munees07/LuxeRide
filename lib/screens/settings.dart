@@ -67,12 +67,7 @@ class _ProfileState extends State<Profile> {
                     icon: const Icon(Icons.restart_alt),
                     text: 'RESET',
                     onpressed: () {
-                      setState(() {
-                        Hive.box<BikesModel>('bikeDb').clear();
-                        Hive.box<CarsModel>('carDb').clear();
-                        Hive.box<BookingsModel>('bookingsDb').clear();
-                        dialoguebox();
-                      });
+                      dialoguebox();
                     }),
                 const Gap(30),
                 SettingsTile(
@@ -98,13 +93,22 @@ class _ProfileState extends State<Profile> {
         useSafeArea: true,
         builder: (context) => AlertDialog(
               scrollable: true,
-              content: const Text('Reseted Successfully'),
+              content: const Text('Reset the app'),
               actions: [
+                TextButton(
+                    onPressed: () {
+                      setState(() {
+                        Hive.box<BikesModel>('bikeDb').clear();
+                        Hive.box<CarsModel>('carDb').clear();
+                        Hive.box<BookingsModel>('bookingsDb').clear();
+                      });
+                    },
+                    child: const Text('OK',style: TextStyle(color: Colors.red),)),
                 TextButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    child: const Text('OK'))
+                    child: const Text('Cancel',style: TextStyle(color: Colors.black)))
               ],
             ));
   }

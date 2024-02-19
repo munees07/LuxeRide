@@ -95,29 +95,6 @@ class _SignUpState extends State<SignUp> {
                               return null;
                             }
                           }),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Gap(5),
-                            const Text('already have an account?',
-                                overflow: TextOverflow.fade,
-                                style: TextStyle(fontSize: 10)),
-                            Expanded(
-                              flex: 0,
-                              child: TextButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                const Login()));
-                                  },
-                                  child: const Text('Login',
-                                      overflow: TextOverflow.fade,
-                                      style: TextStyle(
-                                          fontSize: 10, color: Colors.grey))),
-                            ),
-                          ])
                     ]),
               ),
             ),

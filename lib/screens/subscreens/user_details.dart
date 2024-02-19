@@ -141,6 +141,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                   onPressedButton: () {
                     if (_formkey.currentState!.validate()) {
                       addClicked();
+                      dialoguebox();
                     }
                   })
             ],
@@ -177,8 +178,26 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
         companyName: company,
         modelName: model!);
 
-    add(DataBases.bookingsDataBase,bookings);
+    add(DataBases.bookingsDataBase, bookings);
     Navigator.pop(context);
-    Navigator.pop(context);
+    
+  }
+
+  void dialoguebox() {
+    showDialog(
+        context: context,
+        useSafeArea: true,
+        builder: (context) => AlertDialog(
+              scrollable: true,
+              content: const Text('Added Successfully'),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                    },
+                    child: const Text('OK'))
+              ],
+            ));
   }
 }
