@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:luxeride/db/model/bikes_model.dart';
-import 'package:luxeride/db/model/bookings_model.dart';
-import 'package:luxeride/db/model/cars_model.dart';
-import 'package:luxeride/screens/subscreens/add_screen.dart';
+import 'package:luxeride/model/bike_model/bikes_model.dart';
+import 'package:luxeride/model/bookings_model/bookings_model.dart';
+import 'package:luxeride/model/car_model/cars_model.dart';
+import 'package:luxeride/view/subscreens/add_screen.dart';
 
 ValueNotifier<List<CarsModel>> carListNotifier = ValueNotifier([]);
 ValueNotifier<List<BikesModel>> bikeListNotifier = ValueNotifier([]);

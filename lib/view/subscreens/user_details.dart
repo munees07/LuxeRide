@@ -2,12 +2,11 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:luxeride/db/functions/crud_functions.dart';
-import 'package:luxeride/db/model/bookings_model.dart';
-import 'package:luxeride/screens/subscreens/add_screen.dart';
-
-import 'package:luxeride/widgets/addscreen_widgets.dart';
-import 'package:luxeride/widgets/global_widgets.dart';
+import 'package:luxeride/services/functions/crud_functions.dart';
+import 'package:luxeride/model/bookings_model/bookings_model.dart';
+import 'package:luxeride/view/subscreens/add_screen.dart';
+import 'package:luxeride/view/widgets/addscreen_widgets.dart';
+import 'package:luxeride/view/widgets/global_widgets.dart';
 
 enum Pack { daily, monthly }
 

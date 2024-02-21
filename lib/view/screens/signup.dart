@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:luxeride/screens/login.dart';
-import 'package:luxeride/screens/splash.dart';
-import 'package:luxeride/widgets/global_widgets.dart';
+import 'package:luxeride/view/screens/login.dart';
+import 'package:luxeride/view/screens/splash.dart';
+import 'package:luxeride/view/widgets/global_widgets.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

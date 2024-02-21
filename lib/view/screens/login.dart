@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:luxeride/screens/bottom_nav.dart';
-import 'package:luxeride/screens/splash.dart';
-import 'package:luxeride/widgets/global_widgets.dart';
+import 'package:luxeride/view/screens/bottom_nav.dart';
+import 'package:luxeride/view/screens/splash.dart';
+import 'package:luxeride/view/widgets/global_widgets.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key, this.username, this.password});

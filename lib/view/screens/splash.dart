@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:luxeride/screens/bottom_nav.dart';
-import 'package:luxeride/screens/signup.dart';
+import 'package:luxeride/view/screens/bottom_nav.dart';
+import 'package:luxeride/view/screens/signup.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

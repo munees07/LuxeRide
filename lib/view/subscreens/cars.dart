@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
-import 'package:luxeride/db/functions/crud_functions.dart';
-import 'package:luxeride/db/model/cars_model.dart';
-import 'package:luxeride/screens/subscreens/add_screen.dart';
-import 'package:luxeride/screens/subscreens/car_editscreen.dart';
-import 'package:luxeride/screens/subscreens/piechart.dart';
-import 'package:luxeride/screens/vehicle_details.dart';
+import 'package:luxeride/services/functions/crud_functions.dart';
+import 'package:luxeride/model/car_model/cars_model.dart';
+import 'package:luxeride/view/subscreens/add_screen.dart';
+import 'package:luxeride/view/subscreens/car_editscreen.dart';
+import 'package:luxeride/view/subscreens/piechart.dart';
+import 'package:luxeride/view/screens/vehicle_details.dart';
 
 class CarPage extends StatefulWidget {
   const CarPage({super.key});

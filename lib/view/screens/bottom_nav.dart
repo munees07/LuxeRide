@@ -1,9 +1,9 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:luxeride/screens/bookings.dart';
-import 'package:luxeride/screens/home.dart';
-import 'package:luxeride/screens/settings.dart';
-import 'package:luxeride/screens/subscreens/add_screen.dart';
+import 'package:luxeride/view/screens/bookings.dart';
+import 'package:luxeride/view/screens/home.dart';
+import 'package:luxeride/view/screens/settings.dart';
+import 'package:luxeride/view/subscreens/add_screen.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});

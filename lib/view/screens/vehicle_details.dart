@@ -1,9 +1,8 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:luxeride/screens/subscreens/user_details.dart';
-import 'package:luxeride/widgets/global_widgets.dart';
+import 'package:luxeride/view/subscreens/user_details.dart';
+import 'package:luxeride/view/widgets/global_widgets.dart';
 
 class DetailScreen extends StatefulWidget {
   const DetailScreen(

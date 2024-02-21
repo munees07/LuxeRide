@@ -2,14 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:luxeride/db/model/bikes_model.dart';
-import 'package:luxeride/db/model/bookings_model.dart';
-import 'package:luxeride/db/model/cars_model.dart';
-
-import 'package:luxeride/screens/signup.dart';
-import 'package:luxeride/screens/subscreens/about.dart';
-import 'package:luxeride/screens/subscreens/piechart.dart';
-import 'package:luxeride/screens/subscreens/privacy.dart';
+import 'package:luxeride/model/bike_model/bikes_model.dart';
+import 'package:luxeride/model/bookings_model/bookings_model.dart';
+import 'package:luxeride/model/car_model/cars_model.dart';
+import 'package:luxeride/view/screens/signup.dart';
+import 'package:luxeride/view/subscreens/about.dart';
+import 'package:luxeride/view/subscreens/piechart.dart';
+import 'package:luxeride/view/subscreens/privacy.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

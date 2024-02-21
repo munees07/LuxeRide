@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:luxeride/db/model/bikes_model.dart';
-import 'package:luxeride/db/model/bookings_model.dart';
-import 'package:luxeride/db/model/cars_model.dart';
-import 'package:luxeride/screens/splash.dart';
+import 'package:luxeride/model/car_model/cars_model.dart';
+import 'package:luxeride/view/screens/splash.dart';
+import 'model/bike_model/bikes_model.dart';
+import 'model/bookings_model/bookings_model.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

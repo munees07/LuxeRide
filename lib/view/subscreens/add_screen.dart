@@ -3,11 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:luxeride/db/functions/crud_functions.dart';
-import 'package:luxeride/db/model/bikes_model.dart';
-import 'package:luxeride/db/model/cars_model.dart';
-import 'package:luxeride/widgets/addscreen_widgets.dart';
-import 'package:luxeride/widgets/global_widgets.dart';
+import 'package:luxeride/services/functions/crud_functions.dart';
+import 'package:luxeride/model/bike_model/bikes_model.dart';
+import 'package:luxeride/model/car_model/cars_model.dart';
+import 'package:luxeride/view/widgets/addscreen_widgets.dart';
+import 'package:luxeride/view/widgets/global_widgets.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({super.key});

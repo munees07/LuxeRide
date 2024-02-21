@@ -4,11 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
-import 'package:luxeride/db/functions/crud_functions.dart';
-import 'package:luxeride/db/model/bookings_model.dart';
-import 'package:luxeride/screens/subscreens/add_screen.dart';
-
-import 'package:luxeride/screens/subscreens/bookings_details.dart';
+import 'package:luxeride/services/functions/crud_functions.dart';
+import 'package:luxeride/model/bookings_model/bookings_model.dart';
+import 'package:luxeride/view/subscreens/add_screen.dart';
+import 'package:luxeride/view/subscreens/bookings_details.dart';
 
 class Bookings extends StatefulWidget {
   const Bookings(

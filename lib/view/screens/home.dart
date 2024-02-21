@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:luxeride/screens/subscreens/bikes.dart';
-import 'package:luxeride/screens/subscreens/cars.dart';
+import 'package:luxeride/view/subscreens/bikes.dart';
+import 'package:luxeride/view/subscreens/cars.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
