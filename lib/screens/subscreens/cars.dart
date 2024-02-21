@@ -27,7 +27,8 @@ class _CarPageState extends State<CarPage> {
     searchedList = carListNotifier.value
         .where(
           (car) =>
-              car.companyName!.toLowerCase().contains(search.toLowerCase()),
+              car.companyName!.toLowerCase().contains(search.toLowerCase()) ||
+              car.modelName.toLowerCase().contains(search.toLowerCase()),
         )
         .toList();
   }
@@ -118,9 +119,7 @@ class _CarPageState extends State<CarPage> {
                     (value, element) => value + element,
                   )
                   .toDouble();
-
               Chart.carvalue = totalcar;
-
               return Column(
                 children: [
                   Slidable(

@@ -102,6 +102,7 @@ class _ProfileState extends State<Profile> {
                         Hive.box<CarsModel>('carDb').clear();
                         Hive.box<BookingsModel>('bookingsDb').clear();
                       });
+                      Navigator.pop(context);
                     },
                     child: const Text('OK',style: TextStyle(color: Colors.red),)),
                 TextButton(

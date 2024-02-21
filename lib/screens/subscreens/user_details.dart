@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -166,7 +167,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
     final address = addresscontroller.text;
     final license = licensecontroller.text;
 
-    print('$company $model $username');
+    log('$company $model $username');
 
     final bookings = BookingsModel(
         image: image,

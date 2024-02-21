@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -15,7 +16,7 @@ class AddScreen extends StatefulWidget {
   State<AddScreen> createState() => _AddScreenState();
 }
 
-enum DataBases { carDataBase, bikeDataBase,bookingsDataBase }
+enum DataBases { carDataBase, bikeDataBase, bookingsDataBase }
 
 class _AddScreenState extends State<AddScreen> {
   DataBases selectedDatabase = DataBases.carDataBase;
@@ -172,7 +173,7 @@ class _AddScreenState extends State<AddScreen> {
       ),
     );
   }
-
+ 
   Future<void> onAddClicked() async {
     if (selectedDatabase == DataBases.carDataBase) {
       final company = companycontroller.text.trim();
@@ -181,8 +182,8 @@ class _AddScreenState extends State<AddScreen> {
       final torque = torquecontroller.text.trim();
       final dailyprice = dailypricecontroller.text.trim();
       final monthlyprice = monthlypricecontroller.text.trim();
-      
-      print('$company $model $power $torque $dailyprice $monthlyprice');
+
+      log('$company $model $power $torque $dailyprice $monthlyprice');
 
       final car = CarsModel(
           companyName: company,
@@ -200,8 +201,8 @@ class _AddScreenState extends State<AddScreen> {
       final torque = torquecontroller.text.trim();
       final dailyprice = dailypricecontroller.text.trim();
       final monthlyprice = monthlypricecontroller.text.trim();
-      
-      print('$company $model $power $torque $dailyprice $monthlyprice');
+
+      log('$company $model $power $torque $dailyprice $monthlyprice');
 
       final bike = BikesModel(
           companyName: company,

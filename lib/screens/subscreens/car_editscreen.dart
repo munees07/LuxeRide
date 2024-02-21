@@ -170,8 +170,8 @@ class _CarEditScreenState extends State<CarEditScreen> {
               actions: [
                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        textStyle: const TextStyle(color: Colors.white)),
+                        backgroundColor: Colors.black,foregroundColor: Colors.white,
+                        ),
                     onPressed: () {
                       Navigator.pop(context);
                       Navigator.pop(context);

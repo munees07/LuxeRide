@@ -11,7 +11,8 @@ class MyPieChart extends StatefulWidget {
 class _MyPieChartState extends State<MyPieChart> {
   late double totalcarvalue;
   late double totalbikevalue;
-  late double totalvehiclevalue;
+
+  late Map<String, double> datas;
 
   @override
   void initState() {
@@ -20,19 +21,17 @@ class _MyPieChartState extends State<MyPieChart> {
   }
 
   void addchartvalues() {
-    setState(() {
-      totalcarvalue = Chart.carvalue;
-      totalbikevalue = Chart.bikevalue;
-      totalvehiclevalue = Chart.total;
-    });
+      setState(() {
+        totalcarvalue = Chart.carvalue;
+        totalbikevalue = Chart.bikevalue;
+        datas = {
+          'Cars': totalcarvalue,
+          'Bikes': totalbikevalue,
+        };
+      });
   }
 
-  late Map<String, double> datas = {
-    'Cars': totalcarvalue,
-    'Bikes': totalbikevalue,
-    'Total': totalvehiclevalue
-  };
-  List<Color> listColors = [Colors.black54, Colors.black38, Colors.black12];
+  List<Color> listColors = [Colors.black54, Colors.black38];
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +45,11 @@ class _MyPieChartState extends State<MyPieChart> {
             colorList: listColors,
             chartType: ChartType.ring,
             ringStrokeWidth: 30,
-            centerText: 'PIECHART',
+            centerText: 'Chart',
             chartLegendSpacing: 50,
             chartRadius: MediaQuery.of(context).size.width / 2,
             chartValuesOptions: const ChartValuesOptions(
-                showChartValuesInPercentage: true,
+                showChartValues: true,
                 showChartValueBackground: false,
                 showChartValuesOutside: true),
             legendOptions: const LegendOptions(
@@ -63,8 +62,8 @@ class _MyPieChartState extends State<MyPieChart> {
     );
   }
 }
+
 class Chart {
   static double carvalue = 0;
   static double bikevalue = 0;
-  static double total = carvalue + bikevalue;
 }
